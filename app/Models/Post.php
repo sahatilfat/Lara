@@ -12,6 +12,8 @@ class Post extends Model
     protected $fillable = ['title', 'category_id', 'slug', 'excerpt', 'body'];
     protected $quarded = ['id'];
 
+    protected $with = ['category', 'author'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);
